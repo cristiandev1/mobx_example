@@ -15,7 +15,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   void initState() {
-    // autorun((_) {
+    //Normalmente utilizamos para monitorar varios valores 
+    // ReactionDisposer dispose = autorun((_) {
     //   print("digitando numero do cartao : ${homeStore.numeroCartao}");
     //   print("digitando nome no cartao : ${homeStore.nomeCartao}");
     // });
@@ -23,6 +24,7 @@ class _HomePageState extends State<HomePage> {
     //Monitora os observáveis ​​usados ​​dentro da fn()função e executa o effect()quando a fn()função retorna um valor diferente. 
     //Apenas os observáveis ​​internos fn()são rastreados.
     //Todos eles retornam um ReactionDisposer, uma função que pode ser chamada para descartar a reação.
+    //Normalmente utilizamos para monitorar apenas um valor
     ReactionDisposer dispose = reaction((_) => homeStore.numeroCartao, (msg) => print(msg));
     
     //dispose();
